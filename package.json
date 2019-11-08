@@ -52,6 +52,6 @@
     "url": "https://github.com/eggjs/egg/issues"
   },
   "homepage": "https://github.com/eggjs/egg-rdkafka#readme",
-  "author": "realcxj1989 362377487@qq.com",
+  "author": "realcxj1989 <362377487@qq.com>",
   "license": "MIT"
 }
