@@ -82,15 +82,54 @@ exports.rdkafka = {
 };
 ```
 
-see [config/config.default.js](config/config.default.js) for more detail.
-
 ## Example
-
-<!-- example here -->
+### Producer
+```js
+    public async kafkaProducer() {
+        const { ctx, app } = this;
+        const content: any = [];
+        for (let i = 0; i < 10; i++) {
+            content.push(`world{i}`);
+        }
+        const key = 'test';
+        const topicName = 'hello'
+        const failedMsgs = await app.kafka.produce(key, topicName, content);
+        if (failedMsgs && failedMsgs.length > 0) {
+            ctx.body = 'failed';
+        } else {
+            ctx.body = 'ok';
+        }
+    }
+```
+### Consumer
+```js
+        const key = 'test';
+        const topicNames = ['hello'];
+        const consumer = app.kafka.consumerMap.get(key);
+        consumer.subscribe(topicNames);
+        let interval = setInterval(() => {
+            consumer.consume(1);
+        }, 1000);
+        consumer.on('data', async (data) => {
+            clearInterval(interval);
+            console.log(data)
+            switch (data.topic) {
+                case:'hello':{
+                    await consumer.commit();
+                    interval = setInterval(() => {
+                        consumer.consume(1);
+                    }, 1000);
+                }
+                default:{
+                    console.log('error')
+                }
+            }
+        })
+```
 
 ## Questions & Suggestions
 
-Please open an issue [here](https://github.com/eggjs/egg/issues).
+Please open an issue [here](https://github.com/realcxj1989/egg-rdkafka/issues).
 
 ## License
 
