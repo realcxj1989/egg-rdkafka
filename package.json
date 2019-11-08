@@ -1,5 +1,5 @@
 {
-  "name": "egg-rdkafka",
+  "name": "egg-rdkafka-client",
   "version": "1.0.2",
   "description": "",
   "eggPlugin": {

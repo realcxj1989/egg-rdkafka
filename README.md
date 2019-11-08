@@ -8,7 +8,7 @@ Description here.
 ## Install
 
 ```bash
-$ npm i egg-rdkafka --save
+$ npm i egg-rdkafka-client --save
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ $ npm i egg-rdkafka --save
 // {app_root}/config/plugin.js
 exports.rdkafka = {
   enable: true,
-  package: 'egg-rdkafka',
+  package: 'egg-rdkafka-client',
 };
 ```
 
