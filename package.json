@@ -46,12 +46,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-rdkafka.git"
+    "url": "git+https://github.com/realcxj1989/egg-rdkafka.git"
   },
   "bugs": {
-    "url": "https://github.com/eggjs/egg/issues"
+    "url": "https://github.com/realcxj1989/egg-rdkafka/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-rdkafka#readme",
+  "homepage": "https://github.com/realcxj1989/egg-rdkafka#readme",
   "author": "realcxj1989 <362377487@qq.com>",
   "license": "MIT"
 }
